@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium Car Dealership</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ======================
+       INTERNAL CSS (STYLES)
+       ====================== -->
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #222;
+      background-color: #f7f7f7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 40px;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #0f172a;
+    }
+
+    /* Cars Section */
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .car-card {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .car-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #16a34a;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .service-box {
+      padding: 20px;
+      background: #e5e7eb;
+      border-radius: 8px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: #0f172a;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #1e293b;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================
+       HEADER & NAVIGATION
+       ====================== -->
+  <header>
+    <nav>
+      <h2>AutoLux</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======================
+       HERO SECTION
+       ====================== -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Find Your Dream Car</h1>
+      <p>New & Used Premium Cars at Trusted Prices</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="max-width:800px;margin:auto;text-align:center;">
+      AutoLux is a trusted car dealership offering high-quality new and used vehicles.
+      We focus on transparency, customer satisfaction, and premium service.
+    </p>
+  </section>
+
+  <!-- CARS -->
+  <section id="cars">
+    <h2>Available Cars</h2>
+    <div class="cars">
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Car">
+        <h3>BMW X5</h3>
+        <p class="price">$45,000</p>
+      </div>
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Car">
+        <h3>Audi A6</h3>
+        <p class="price">$38,500</p>
+      </div>
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146" alt="Car">
+        <h3>Tesla Model 3</h3>
+        <p class="price">$42,000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">Car Sales</div>
+      <div class="service-box">Car Financing</div>
+      <div class="service-box">Maintenance</div>
+      <div class="service-box">Insurance Support</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">“Excellent service and honest pricing.” – Rahul</div>
+      <div class="testimonial">“Best place to buy used cars.” – Anjali</div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
+      <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 AutoLux Car Dealership. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ======================
+       INTERNAL JAVASCRIPT
+       ====================== -->
+  <script>
+    // Simple form submission alert
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you! Your message has been sent.");
+    }
+  </script>
+
+</body>
+</html>
